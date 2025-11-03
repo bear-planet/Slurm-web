@@ -1,0 +1,70 @@
+## ------ Organizational Units ------ ##
+dn: ou=People,dc=example,dc=com
+objectClass: organizationalUnit
+ou: People
+description: All LDAP users
+
+dn: ou=Groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: Groups
+description: All LDAP groups
+
+## ------ Users ------ ##
+dn: uid=user1,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: user1
+cn: Rita Lin
+sn: Lin
+displayName: Rita Lin
+uidNumber: 10001
+gidNumber: 5001
+userPassword: 123456
+loginShell: /bin/bash
+homeDirectory: /home/rita
+
+dn: uid=user2,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: user2
+cn: Jane Doe
+sn: Doe
+displayName: Jane Doe
+uidNumber: 10002
+gidNumber: 5001
+userPassword: 123456
+loginShell: /bin/bash
+homeDirectory: /home/jane
+
+dn: uid=user3,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: user3
+cn: TATA Chen
+sn: Chen
+displayName: TATA Chen
+uidNumber: 10003
+gidNumber: 5003
+userPassword: 123456
+loginShell: /bin/bash
+homeDirectory: /home/tata
+
+## ------ Groups ------ ##
+dn: cn=groupA,ou=Groups,dc=example,dc=com
+objectClass: posixGroup
+cn: groupA
+gidNumber: 5001
+memberUid: user1
+memberUid: user2
+
+dn: cn=groupB,ou=Groups,dc=example,dc=com
+objectClass: posixGroup
+cn: groupB
+gidNumber: 5002
+memberUid: user2
+
+dn: cn=groupAdmin,ou=Groups,dc=example,dc=com
+objectClass: posixGroup
+cn: groupAdmin
+gidNumber: 5003
+memberUid: user3

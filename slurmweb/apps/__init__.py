@@ -151,5 +151,5 @@ class SlurmwebWebApp(SlurmwebGenericApp, Flask):
             self,
             host=self.settings.service.interface,
             port=self.settings.service.port,
-            debug="werkzeug" in self.debug_flags,
+            debug=self.settings.service.debug,
         )
